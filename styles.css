@@ -1,0 +1,174 @@
+@font-face {
+  font-family: 'Borne Celine';
+  src: url(/web/fonts/borneceline-regular.otf) format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #f5f5f3;
+}
+
+.div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+  height: 100vh;
+}
+
+.book {
+  position: relative;
+  width: 570px;
+  height: 38rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  perspective: 80vh;
+  border-radius: 4px;
+  /* Bordes redondeados para dar apariencia suave */
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    /* Sombra sutil */
+    0 1px 3px rgba(0, 0, 0, 0.05) !important;
+  transition: all 0.5s ease-in-out;
+}
+
+
+
+.front,
+.back {
+  background: red;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s;
+  transform-origin: left;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+  border-left: 1px solid #d1d1d1;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  /* Simula el grosor de la página */
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.1), transparent);
+  /* Efecto de sombra */
+}
+
+.page::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  /* Grosor de sombra en el borde derecho */
+  height: 100%;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.1), transparent);
+}
+
+.front {
+  z-index: 1;
+  backface-visibility: hidden;
+  background: white;
+}
+
+.back {
+  background: white;
+}
+
+
+.front-content,
+.back-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #E8E5DA;
+  flex-direction: column;
+}
+
+.back-content {
+  transform: rotateY(180deg)
+}
+
+.flipped .front,
+.flipped .back {
+  transform: rotateY(-180deg);
+}
+
+.open-book {
+  width: 100%;
+
+  .page {
+    width: 50%;
+  }
+}
+
+
+.close-book {
+  width: 570px;
+
+  .page {
+    width: 100%;
+
+    .back {
+      transform: translateX(100%) rotateY(-180deg);
+    }
+  }
+}
+
+
+h1 {
+  font-family: 'Borne Celine';
+  font-size: 2.5rem;
+  color: #2c2c2c;
+  margin-left: 0.25rem;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  background: #FA7E61;
+}
+
+.svg-design svg {
+  width: 100px;
+  height: 100px;
+  transition: transform 0.3s ease;
+}
+
+.svg-design svg:hover {
+  transform: scale(1.2);
+}
+
+.button-design {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.0);
+  /* Negro con 50% de transparencia */
+}
