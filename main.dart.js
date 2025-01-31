@@ -2558,7 +2558,7 @@ p=A.e(["back-content"],q)
 k=A.e(["galeria"],q)
 B.a.l(f,A.dI(j,A.B(null,A.e([A.B(null,A.e([A.cF(A.aY(["style","color:#f5f5f3"],n,n),"GALERIA")],m),k)],m),p),"9"))
 p=A.e(["front-content"],q)
-j=A.B(null,A.e([A.dD(A.aY(["style","width: 300px ; heigth 400px;  clip-path: circle(50%);","src","images/1738292771513.jpg"],n,n))],m),p)
+j=A.B(null,A.e([A.dD(A.aY(["style","width: 300px ; heigth 400px;  clip-path: circle(50%);","src","images/1738292771513.png"],n,n))],m),p)
 q=A.e(["back-content"],q)
 B.a.l(f,A.dI(j,A.B(null,A.e([],m),q),"8"))
 q=document
